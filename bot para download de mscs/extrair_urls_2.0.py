@@ -38,7 +38,7 @@ def buscar_e_obter_url_youtube(nome_video):
             extra_info = ydl.extract_info(video_url, download=False)
             
             if 'url' in extra_info:
-                print(f"  [DEBUG] yt-dlp encontrou URL direta: {extra_info['url'][:50]}...") # Mostra só o começo da URL
+                print(f"  [DEBUG] yt-dlp encontrou URL direta: {extra_info['url'][:50]}...") 
                 return extra_info['url']
             elif 'formats' in extra_info:
                 for f in extra_info['formats']:
@@ -62,8 +62,8 @@ if __name__ == "__main__":
 
     while True:
         nome = input("Digite o nome de um vídeo: ")
-        print(f"[DEBUG] Você digitou: '{nome}'") # Adicionado para ver o input
-        if nome.lower().strip() == 'fim': # Adicionado .strip() para remover espaços extras
+        print(f"[DEBUG] Você digitou: '{nome}'") 
+        if nome.lower().strip() == 'fim': 
             print("[DEBUG] 'fim' detectado. Saindo do loop de entrada.")
             break
         if nome.strip():
@@ -86,4 +86,5 @@ if __name__ == "__main__":
                 print("  (Atenção: Estas URLs de stream são temporárias e podem expirar rapidamente.)")
             else:
                 print(f"\n  Não foi possível obter a URL direta para '{nome_video_individual}'.")
+
         print("\n--- Processamento Concluído! ---")
